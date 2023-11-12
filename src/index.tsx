@@ -10,6 +10,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {ErrorPage, TimerPage, SpotifyPage, LoaderPage, ThemePage} from "./pages";
+import {TodosPage} from "./pages/Todos";
 
 export const routes = [
     {
@@ -32,6 +33,10 @@ export const routes = [
             {
                 path: "theme",
                 element: <ThemePage />,
+            },
+            {
+                path: "todos",
+                element: <TodosPage />,
             },
         ],
     },
