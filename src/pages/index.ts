@@ -1,0 +1,5 @@
+export {TimerPage} from './Timer'
+export {SpotifyPage} from './Spotify'
+export {LoaderPage} from './Loader'
+export {ThemePage} from './Theme'
+export {ErrorPage} from './ErrorPage'
