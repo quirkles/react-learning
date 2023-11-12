@@ -19,7 +19,12 @@ export function LoaderPage() {
                 {promises.map(({returnValue, error, isFetching}, i) => {
                     return(
                         <div className='cell' key={i}>
-                            {isFetching ? <div>Loading....</div> : error ? <div>Error: {error.message}</div> : <div>Result: {JSON.stringify(returnValue)}</div>}
+                            {isFetching ?
+                                <div>Loading....</div> :
+                                    error ?
+                                        <div>Error: {error.message}</div> :
+                                        <div>Result: {JSON.stringify(returnValue)}</div>
+                            }
                         </div>
                     )
                 })}
