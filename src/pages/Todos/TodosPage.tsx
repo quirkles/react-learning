@@ -1,5 +1,4 @@
-import {useLoader} from "../../hooks";
-import {ChangeEvent, SyntheticEvent, useEffect, useState} from "react";
+import {ChangeEvent, SyntheticEvent, useState} from "react";
 import {useTodos, type Todo} from "../../hooks";
 import {v4} from "uuid";
 

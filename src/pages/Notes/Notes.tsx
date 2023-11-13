@@ -2,9 +2,24 @@ import {Note, notesReducer} from './notesReducer'
 import {SyntheticEvent, useEffect, useReducer, useState} from "react";
 import {v4} from "uuid";
 
+const notesKey = 'NOTES'
+
+function initializeNotes(initializer: []): Note[] {
+    const fromStorage = localStorage.getItem(notesKey)
+    if(fromStorage) {
+        return JSON.parse(fromStorage)
+    }
+    return initializer
+}
+
 export function NotePage() {
     const [newNote, updateNewNote] = useState<Note>(initNote())
-    const [notes, dispatch] = useReducer(notesReducer, [])
+    const [notes, dispatch] = useReducer(notesReducer, [], initializeNotes)
+    useEffect(() => {
+        if(notes && notes.length) {
+            localStorage.setItem(notesKey, JSON.stringify(notes))
+        }
+    },  [notes])
     const handleAddNote = (e: SyntheticEvent) => {
         e.preventDefault()
         e.stopPropagation()

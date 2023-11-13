@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
         <nav>
-            <ul>
+            <ul className="menu">
                 {
                     routes.map((route) =>
                         route.children.map(child => (
