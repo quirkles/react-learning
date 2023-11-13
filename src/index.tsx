@@ -9,7 +9,7 @@ import {
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {ErrorPage, TimerPage, SpotifyPage, LoaderPage, ThemePage} from "./pages";
+import {ErrorPage, TimerPage, SpotifyPage, LoaderPage, ThemePage, NotePage, SessionUserPage} from "./pages";
 import {TodosPage} from "./pages/Todos";
 
 export const routes = [
@@ -37,6 +37,14 @@ export const routes = [
             {
                 path: "todos",
                 element: <TodosPage />,
+            },
+            {
+                path: "notes",
+                element: <NotePage />,
+            },
+            {
+                path: "session-user",
+                element: <SessionUserPage />,
             },
         ],
     },
